@@ -11,7 +11,7 @@ I added functional delete buttons, so users can delete the individual notes they
 To install my project, I created a repository for it on Github. After that I cloned the repository onto my desktop. I then copied the folders from my class repository and pasted them into my folder. From there, I opened the assignments into a serperate folder.
 
 ## Usage
-Users will be able to write down notes and save them along with labeling each entry with a title.
+Users will be able to write down notes and save them along with labeling each entry with a title. The user can delete their entry as well if they desire.
 
 ## License
 None
@@ -34,6 +34,7 @@ The notes should then be saved to the left side of the screen.
 
 
 To see if the delete button is functional, click on the red trash can icon to the right of the saved notes and the entry should be automatically deleted.
+The delete icon should look like this:
 
 ![Notetakerex4](https://user-images.githubusercontent.com/98942793/171812497-522b6644-03ea-4140-937b-ad7ab6452078.JPG)
 
