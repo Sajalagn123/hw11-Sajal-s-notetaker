@@ -4,15 +4,17 @@ var router = require("express").Router()
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 
-
+// Serves the notes page
 router.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/notes.html"))
 })
 
+// Serves the homepage
 router.get("/homepage", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"))
 })
 
+// Allows user to save notes
 router.post("/api/notes", (req, res) => {
 
 
@@ -39,23 +41,24 @@ router.get("/api/notes", (req, res) => {
 
 });
 
+//Makes delete icon functional
 router.delete("/api/notes/:id", (req, res) => {
 
     var currentSaves = fs.readFileSync(path.join(process.cwd(), "/db/db.json"));
-    //console.log("current list")
+   
     currentSaves = JSON.parse(currentSaves)
-    //console.log("notes id ",currentSaves[0].id, "delete id ",req.params.id )
+    
     
     currentSaves.map(function(a,b){ 
-        //console.log("index number ",b," .... data ",a.id,a.title,a.text) 
+      
         if (currentSaves[b].id == req.params.id){
-            //delete currentSaves[b]
+           
             currentSaves.splice(b,1)
         }
     })
 
     fs.writeFileSync(path.join(process.cwd(), "/db/db.json"), JSON.stringify(currentSaves))
-    //console.log("note deleted ",req.params.id);
+    
 
 
     res.send("sucessfully deleted");
