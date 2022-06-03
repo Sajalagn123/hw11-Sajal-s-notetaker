@@ -4,7 +4,7 @@ const fs = require('fs');
 const uuid = require('uuid');
 
 router.post("/api/notes", (req, res) =>{
-    console.log("post successful for notes !!!!!!")
+    //console.log("post successful for notes !!!!!!")
     res.send("hi");
     /*
     const currentSaves = fs.readFilesSync(path.join(process.cwd(), "/db/db.json"));
